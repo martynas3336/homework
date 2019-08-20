@@ -1,6 +1,6 @@
 ### Description
 
-This is a simple project, which reads selected .json file that contains cash in, cash out by natural or juridical person data, calculates the fee based on given config and prints the result to stdout.
+This is a simple program, which reads selected .json file that contains cash in, cash out by natural or juridical person data, calculates the fee based on given config and prints the result to stdout.
 
 ### How to run
 
@@ -57,8 +57,6 @@ Chai: [https://www.chaijs.com/](https://www.chaijs.com/ "https://www.chaijs.com/
 #### For Cash In
 Commission fee - 0.03% from total amount, but no more than 5.00 EUR.
 
-You can get configuration from API
-
 #### For Cash Out
 There are different commission fees for cash out for natural and legal persons.
 
@@ -69,12 +67,8 @@ Default commission fee - 0.3% from cash out amount.
 
 If total cash out amount is exceeded - commission is calculated only from exceeded amount (that is, for 1000.00 EUR there is still no commission fee).
 
-You can get configuration from API
-
 ##### Legal persons
 Commission fee - 0.3% from amount, but not less than 0.50 EUR for operation.
-
-You can get configuration from API
 
 #### Rounding
 After calculating commission fee, it's rounded to the smallest currency item (for example, for EUR currency - cents) to upper bound (ceiled). For example, 0.023 EUR should be rounded to 3 Euro cents.
