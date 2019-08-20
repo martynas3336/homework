@@ -13,12 +13,15 @@ fs: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html "https://nod
 
 request: [https://nodejs.org/api/http.html](https://nodejs.org/api/http.html "https://nodejs.org/api/http.html")
 
+jsonSchema: [https://json-schema.org/](https://nodejs.org/api/http.html "https://json-schema.org/")
+
 ### Testing
 
 Mocha and chai is used for testing. Testing code is located in `test` directory. `test` directory mimics the the main program directory.
 
 `mocha test/*`
-` mocha test/action/calcCashIn`
+
+`mocha test/action/calcCashIn`
 
 Mocha: [https://mochajs.org/](https://mochajs.org/ "https://mochajs.org/")
 
@@ -107,19 +110,19 @@ the part which creates User instance, invokes user.operation method, stores and 
 invokes requestCashInConfig, requestConversionRates, requestJuridicalUserCashOut, naturalUserCashOut, stores and returns returned result in an object.
 
 ##### requestCashInConfig.js
-requests and resolves cash in config
+requests, validates and resolves cash in config
 
 ##### requestConfig.js(type)
 based on type, calls and resolves config request accordingly
 
 ##### requestConversionRates.js
-requests and resolves conversion rates config
+requests, validates and resolves conversion rates config
 
 ##### requestJuridicalUserCashOutConfig.js
-requests and resolves juridical user cash out config
+requests, validates and resolves juridical user cash out config
 
 ##### requestNaturalUserCashOutConfig.js
-requests and resolves natural user cash out config
+requests, validates and resolves natural user cash out config
 
 #### Operation
 
@@ -140,6 +143,23 @@ returns instance user_type
 
 ##### getType()
 returns instance type
+
+### schemas
+
+#### cashInConfigSchema(cashIn)
+validates cashIn config based on schema and either resolves or rejects
+
+#### conversionRatesConfigSchema(conversionRates)
+validates conversionRates config based on schema and either resolves or rejects
+
+#### inputSchema(input)
+validates input config based on schema and either resolves or rejects
+
+#### juridicalUserCashOutConfigSchema(cashOut)
+validates juridical user cash out config based on schema and either resolves or rejects
+
+#### naturalUserCashOutConfigSchema(cashOut)
+validates natural user cash out config based on schema and either resolves or rejects
 
 #### tools
 
@@ -170,4 +190,14 @@ resetTotal sets cash in amd cash out of any user to 0. This method is called onl
 starting file, which runs task.js
 
 #### task.js
-all of the action happens here. task gets invokes getFileName, readFile, readJson functions, invokes config call, action function and finally prints retured result to stdout
+all of the action happens here. 
+
+task invokes getFileName, readFile, readJson functions,
+
+task invokes config call,
+
+task invokes given input validation function,
+
+task invokes action function,
+
+and finally task prints returned result to stdout
