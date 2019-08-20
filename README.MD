@@ -1,6 +1,6 @@
 ### Description
 
-This is a simple project, which reads selected .json file that contains cash in, cash out by natural or juridical person, calculates the fee based on given config and prints the result to stdout.
+This is a simple project, which reads selected .json file that contains cash in, cash out by natural or juridical person data, calculates the fee based on given config and prints the result to stdout.
 
 ### How to run
 
