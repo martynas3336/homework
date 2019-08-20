@@ -1,5 +1,3 @@
-# New Document
-
 ### Description
 
 This is a simple project, which reads selected .json file that contains cash in, cash out by natural or juridical person, calculates the fee based on given config and prints the result to stdout.
@@ -170,11 +168,3 @@ starting file, which runs task.js
 
 #### task.js
 all of the action happens here. task gets invokes getFileName, readFile, readJson functions, invokes config call, action function and finally prints retured result to stdout
-
-
-# Readme.md
-
-**Table of Contents**
-
-[TOC]
-
