@@ -11,7 +11,7 @@ app().then(() => {
   return 0;
 }).catch((err) => {
   console.log("ERROR OCCURED");
-  if(!err)
+  if(err)
   {
     console.log(err);
   } else {
