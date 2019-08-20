@@ -3,6 +3,7 @@ const readFile = require('./tools/readFile');
 const readJson = require('./tools/readJson');
 const getConfig = require('./config/getConfig');
 const action = require('./action');
+const inputSchema = require('./schemas/inputSchema');
 
 const task = async function mainTask() { return new Promise((resolve, reject) => {
   let fileName = getFileName(process.argv);
@@ -17,6 +18,14 @@ const task = async function mainTask() { return new Promise((resolve, reject) =>
       return resolve();
     }).catch((err) => {
       return reject(err);
+    })
+  })})
+
+  .then(() => { return new Promise((resolve, reject) => {
+    inputSchema(data).then(() => {
+      return resolve();
+    }).catch((err) => {
+      return reject("INVALID INPUT DATA");
     })
   })})
 
