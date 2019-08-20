@@ -167,7 +167,7 @@ returns third array element as parsed args are expected to be node parameters
 reads and returns file buffer based on file name in process.cwd() directory.
 
 ##### readJson(rawData)
-fixes and returns json. rawData is expected to be invalid json string or buffer which would have some trailing commas, that will not work with JSON.parse
+fixes and returns json. rawData is expected to be invalid json string or buffer which would have some trailing commas that will not work with JSON.parse
 
 #### User
 
@@ -178,7 +178,7 @@ User class
 creates operation class, pushes it to corresponding instance operations variable, runs operations.calculateFee() and retuns the result
 
 ##### resetTotal()
-resetTotal sets cash in amd cash out of any user to 0. This method is called only if new week from previous operation occurs.
+resetTotal sets cash in and cash out of any user to 0. This method is called only if new week from previous operation occurs.
 
 #### app.js
 starting file, which runs task.js
